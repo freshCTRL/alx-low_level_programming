@@ -1,12 +1,14 @@
 #include <stdio.h>
+
 /**
  * main - Entry point
  * 
- * Description - function to print a line of quote
+ * Description - function to print a line
  *
- * Return - A;ways 0 (sucess)
- */ 
-int main()
+ * return - Always 0 (sucess)
+ */
+
+int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
 	return (0);
