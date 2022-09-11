@@ -1,7 +1,10 @@
 #include <stdio.h>
 
 /**
- * main - outputs \"Programming is like building a multilingual puzzle
+ * main - print the string in the puts function
+ *
+ * Description - using the main function 
+ * this program prints "\"Programming is like building a multilingual puzzle" 
  * return - Always 0 (sucess)
  */
 
