@@ -4,14 +4,11 @@
 
 #include <stdio.h>
 
-
-
 /**
  * main - ENTRY POINT
  *
  * Return: Always 0 (success)
  */
-
 int main(void)
 {
     int n;
