@@ -1,5 +1,4 @@
-#include<stdlib. h>
-#include<string. h>
+#include "main.h"
 #include <stdio.h>
 
 /**
@@ -7,6 +6,7 @@
  *
  * Return: Always 0
  */
+void print_alphabet_x10(void);
 int main(void)
 {
 char c;
@@ -19,9 +19,9 @@ if (counter < 10)
 {
 for (c = 'a'; c <= 'z'; c++)
 {
-putchar(c);
+_putchar(c);
 }
-putchar('\n');
+_putchar('\n');
 counter++;
 }
 else
@@ -29,5 +29,4 @@ else
 haltcounter = 1;
 }
 }
-return (0);
 }
