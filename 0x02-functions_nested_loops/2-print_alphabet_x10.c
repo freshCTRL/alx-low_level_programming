@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * print_alphabet_x10.c - print 10 times with no return
+ * print_alphabet_x10 - print 10 times with no return
  *
  * Return: Always 0
  */
