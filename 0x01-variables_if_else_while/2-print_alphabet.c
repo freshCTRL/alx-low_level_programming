@@ -9,10 +9,12 @@
 
 int main(void)
 {
-char c;
-for (ch = 'a'; ch <= 'z'; ch++)
-putchar(ch);
+char low;
+
+for (low = 'a'; low <= 'z'; low++)
+{
+putchar(low);
 }
-putchar('\n')	
+putchar('\n');	
 return (0);
 }
