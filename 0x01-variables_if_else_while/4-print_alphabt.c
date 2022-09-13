@@ -15,7 +15,6 @@ if (ch != 'a' && ch != 'q');
 putchar(ch);
 }
 }
-putchar(\n);
+putchar('\n');
 return (0);
 }
-
