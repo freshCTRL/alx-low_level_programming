@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main - check the code
+ * print_alphabet - prototype referenced in the header main
  *
  * Return: Always 0.
  */
