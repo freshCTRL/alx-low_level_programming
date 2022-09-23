@@ -1,13 +1,12 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * _strncat - concatenates two strings.
- * @dest: The destination value
+ * @dest: the desination value
  * @src: The source value
- * @n: Limit of concatenation
+ * @n: limit of concatenation
  *
- * Return: pointer to the resulting string dest.
+ * Return: A pointer to the resulting string dest
  */
 char *_strncat(char *dest, char *src, int n)
 {
@@ -19,10 +18,10 @@ dlen++;
 }
 while (j < n && src[j])
 {
-dest[dlen] = src[j]
-dlen++
-j++
+dest[dlen] = src[j];
+dlen++;
+j++;
 }
-dest[dlen + n + 1] ='\0';
+dest[dlen + n + 1] = '\0';
 return (dest);
 }
