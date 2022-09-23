@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * _strcmp - Compares two strings
@@ -29,7 +28,7 @@ lim = b;
 }
 while (c <= lim)
 {
-if (s1[c] = s2[c])
+if (s1[c] == s2[c])
 {
 c++;
 continue;
