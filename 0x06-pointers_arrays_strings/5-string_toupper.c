@@ -7,7 +7,7 @@
  *
  * Return: ___
  */
-char *cap_string(cahr *s)
+char *cap_string(char *s)
 {
 int a = 0, i;
 int cspc = 13;

@@ -29,14 +29,14 @@ lim = b;
 }
 while (c <= lim)
 {
-if (s1[c] == s2[c])
+if ((s1[c]) == (s2[c]))
 {
 c++;
 continue;
 }
 else
 {
-r = (s1[c] - s2[c]);
+r = ((s1[c]) - (s2[c]));
 break;
 }
 c++;
