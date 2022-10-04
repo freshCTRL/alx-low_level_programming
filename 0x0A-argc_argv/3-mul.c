@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdlib.h>
 #include <stdlib.h>
 
 /**
@@ -25,7 +25,7 @@ printf("%d\n", mul);
 else
 {
 {
-printf("%s\n", "error");
+printf("%s\n", "Error");
 }
 return (1);
 }

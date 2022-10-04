@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * main - entry point
@@ -8,7 +8,7 @@
  *
  * Return: 0
  */
-int main(int argc, char *argv[])
+int main(int argc, int *argv[])
 {
 int i;
 int add;
@@ -19,13 +19,13 @@ if (argc == 1)
 printf("%d\n", 0);
 }
 else
-if (argc > 1 && argc != 2)
+if (argc > 2)
 {
 for (i = 1; i < argc; i++)
 {
-add += atoi(argv[i]);
-}
+add += argv[i];
 printf("%d\n", add);
+}
 }
 else
 {
