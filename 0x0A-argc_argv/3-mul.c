@@ -24,7 +24,9 @@ printf("%d\n", mul);
 }
 else
 {
+{
 printf("%s\n", "error");
+}
 return (1);
 }
 return (0);
