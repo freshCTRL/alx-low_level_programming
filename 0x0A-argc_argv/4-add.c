@@ -2,13 +2,13 @@
 #include <stdio.h>
 
 /**
- * main - entry point
- * @argc: argument to main
- * @argv: argument to main
+ * main - entry point.
+ * @argc: argument to main.
+ * @argv: argument to main.
  *
- * Return: 0
+ * Return: 0(Success)
  */
-int main(int argc, int *argv[])
+int main(int argc, char *argv[])
 {
 int i;
 int add;
@@ -19,19 +19,18 @@ if (argc == 1)
 printf("%d\n", 0);
 }
 else
-if (argc > 2)
+if (argc > 1)
 {
 for (i = 1; i < argc; i++)
 {
-add += argv[i];
+add += atoi(argv[i]);
+}
 printf("%d\n", add);
 }
-}
 else
-{
+if (!(add >= 0))
 {
 printf("%s\n", "Error");
-}
 return (1);
 }
 return (0);
