@@ -29,7 +29,9 @@ printf("%d\n", add);
 }
 else
 {
+{
 printf("%s\n", "Error");
+}
 return (1);
 }
 return (0);
