@@ -1,9 +1,8 @@
 #ifndef OBJECT_LIKE_MACRO_H
 #define OBJECT_LIKE_MACRO_H
 
-/**
- * AUTH: Opeyemi OYEBOADE
- *
+/*
+ * AUTH:Opeyemi OYEBOADE
  */
 #define SIZE 1024
 
