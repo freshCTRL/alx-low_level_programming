@@ -2,7 +2,8 @@
 #define FUNCTION_LIKE_MACRO_H
 
 /*
- * AUTH: Opeyemi OYEBOADE
+ * File: 3-function_like_macro.h
+ * AUTH:Opeyemi OYEBOADE
  * Desc: Header file that defines a function-like macro ABS(x)
  * that computes the absolute value of a number x.
  */
