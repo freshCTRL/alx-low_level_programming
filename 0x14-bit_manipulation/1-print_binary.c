@@ -17,15 +17,9 @@ if ((n >> i) & 1)
 _putchar('1');
 j++;
 }
-else
-if (j > 0)
-{
+else if (j > 0)
 _putchar('0');
 }
-
 if (j == 0)
-{
 _putchar('0');
-}
-}
 }
