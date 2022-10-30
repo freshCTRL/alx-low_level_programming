@@ -11,7 +11,7 @@ unsigned int n;
 char *c;
 
 n = 1;
-c = (char *) & n;
+c = (char *)&n;
 
 return ((int) *c);
 }
