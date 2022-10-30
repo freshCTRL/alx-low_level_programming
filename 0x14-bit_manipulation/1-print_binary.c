@@ -19,8 +19,13 @@ j++;
 }
 else
 if (j > 0)
+{
 _putchar('0');
+}
 
 if (j == 0)
+{
 _putchar('0');
+}
+}
 }
