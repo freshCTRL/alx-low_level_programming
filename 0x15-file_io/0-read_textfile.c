@@ -31,11 +31,6 @@ if (o == -1 || r == -1 || w == -1 || w != r)
 free(buffer);
 return (0);
 }
-free(buffer);
-close(o);
-
-return (w);
-}
 
 free(buffer);
 close(o);
