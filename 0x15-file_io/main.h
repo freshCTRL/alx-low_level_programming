@@ -3,7 +3,6 @@
 
 /*
  * File: main.h
- * Auth: Multicademy
  * Desc: Header file containing prototypes for all functions
  * written in the 0x14-file_io directory.
  */
