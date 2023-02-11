@@ -21,6 +21,7 @@ new_node->prev = NULL;
 new_node->next = NULL;
 
 new_node->next = *head;
+*head->prev = new_node;
 *head = new_node;
 
 return (new_node);
