@@ -16,7 +16,6 @@ size_t count = 0;
 while (h != NULL)
 {
 	count++;
-	return (count);
 }
 return (count);
 }
