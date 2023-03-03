@@ -22,7 +22,7 @@ while (l <= '9')
 int m = '0';
 while (m <= '9')
 {
-if ((i <= l) && ((m > k)) || (l > i))
+if ((i <= l) && ((m > k) || (l > i)))
 {
 int sum = i + l + k + m;
 putchar(i);
