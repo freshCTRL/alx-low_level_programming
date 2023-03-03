@@ -30,7 +30,7 @@ putchar(k);
 putchar(' ');
 putchar(l);
 putchar(m);
-if (sum <= 227)
+if (sum < 227)
 {
 putchar(',');
 putchar(' ');
@@ -46,4 +46,5 @@ i++;
 }
 putchar('\n');
 return (0);
+
 }
