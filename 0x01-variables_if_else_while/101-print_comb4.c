@@ -22,7 +22,7 @@ while (l <= '9')
 putchar(i);
 putchar(k);
 putchar(l);
-if (i != '9')
+if (i != '7')
 {
 putchar(',');
 putchar(' ');
