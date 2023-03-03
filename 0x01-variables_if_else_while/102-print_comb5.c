@@ -24,12 +24,13 @@ while (m <= '9')
 {
 if ((i <= l) && ((m > k)) || (l > i))
 {
+int sum = i + l + k + m;
 putchar(i);
 putchar(k);
 putchar(' ');
 putchar(l);
 putchar(m);
-if (i <= '9')
+if (sum <= 227)
 {
 putchar(',');
 putchar(' ');
