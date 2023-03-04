@@ -31,7 +31,7 @@ putchar(k);
 putchar(' ');
 putchar(l);
 putchar(m);
-if ((sum < 227) && (ilm <= 171))
+if ((sum < 227) || (ilm < 171))
 {
 putchar(',');
 putchar(' ');
