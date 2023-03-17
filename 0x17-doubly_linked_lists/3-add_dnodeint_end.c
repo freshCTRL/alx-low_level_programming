@@ -4,16 +4,15 @@
  * add_dnodeint_end - Entry point
  * @head: argument to add_dnode_end
  * @n: argument to add_dnode_end
- *
+ *:wq
+
  * Return: NULL (Success)
 */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-dlistint_t *temp;
+dlistint_t *temp = malloc(sizeof(dlistint_t));
 dlistint_t *tp;
 dlistint_t *tmp;
-dlistint_t *last;
-temp = malloc(sizeof(dlistint_t));
 
 if (temp == NULL)
 {
@@ -45,8 +44,7 @@ while (tmp->next != NULL)
 tmp = tmp->next;
 }
 
-last = tmp;
-if (last->n == n)
+if (tmp->n == n)
 {
 return (temp);
 }
