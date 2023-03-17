@@ -4,8 +4,7 @@
  * add_dnodeint_end - Entry point
  * @head: argument to add_dnode_end
  * @n: argument to add_dnode_end
- *:wq
-
+ *
  * Return: NULL (Success)
 */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
@@ -39,7 +38,7 @@ temp->prev = tp;
 
 if (temp->n == n)
 {
-return (*head);
+return (temp);
 }
 else
 {
