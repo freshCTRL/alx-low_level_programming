@@ -1,16 +1,16 @@
 #include "lists.h"
 #include <stdlib.h>
 /**
- * free_dlistint_t - Entry point
+ * free_dlistint - Entry point
  * @head: argument to free_dlistint_t
  *
- * Description - No return value
+ * Description: set the head of a linked list to null
  */
 void free_dlistint(dlistint_t *head)
 {
 dlistint_t *temp;
-temp = head;
-while (temp != NULL)
+
+while (head != NULL)
 {
 temp = head->next;
 free(head);
