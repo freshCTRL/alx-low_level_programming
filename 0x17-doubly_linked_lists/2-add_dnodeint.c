@@ -27,7 +27,7 @@ if (*head == NULL)
 
 if (*head == NULL)
 {
-return NULL;
+return (NULL);
 }
 }
 else
@@ -38,7 +38,7 @@ new->next = *head;
 
 if (new->next == NULL)
 {
-return NULL;
+return (NULL);
 }
 }
 return (NULL);
