@@ -32,5 +32,9 @@ else
 new->next = *head;
 *head = new;
 }
+if (*head == NULL)
+{
+return (new);
+}
 return (NULL);
 }
