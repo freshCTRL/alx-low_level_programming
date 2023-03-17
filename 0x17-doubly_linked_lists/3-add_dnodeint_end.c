@@ -45,7 +45,6 @@ while (tmp->next != NULL)
 tmp = tmp->next;
 }
 
-last = NULL;
 last = tmp;
 if (last->n == n)
 {
