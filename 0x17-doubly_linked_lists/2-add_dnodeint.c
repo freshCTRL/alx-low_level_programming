@@ -29,7 +29,7 @@ new->next = *head;
 
 if ((*head)->n == n)
 {
-return (new);
+return (*head);
 }
 else
 {
