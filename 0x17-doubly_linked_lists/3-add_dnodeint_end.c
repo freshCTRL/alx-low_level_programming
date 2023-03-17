@@ -38,7 +38,7 @@ temp->prev = tp;
 
 if (temp->n == n)
 {
-return ((*head));
+return (temp);
 }
 else
 {
