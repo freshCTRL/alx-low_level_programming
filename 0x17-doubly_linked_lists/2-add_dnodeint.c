@@ -33,5 +33,5 @@ if ((*head)->n != n)
 {
 return (NULL);
 }
-return (new);
+return (*head);
 }
