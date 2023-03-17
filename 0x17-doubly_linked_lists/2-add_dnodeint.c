@@ -32,13 +32,9 @@ new->next = *head;
 *head = new;
 }
 
-temp = *head;
-while (temp != NULL)
+if (head->n != n)
 {
-if (temp->n != n) {
-return NULL;
-}
-temp = temp->next;
+return (NULL);
 }
 
 return (NULL);
