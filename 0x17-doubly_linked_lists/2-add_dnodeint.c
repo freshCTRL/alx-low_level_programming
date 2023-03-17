@@ -32,7 +32,7 @@ new->next = *head;
 *head = new;
 }
 
-if (head->n != n)
+if ((*head)->n != n)
 {
 return (NULL);
 }
