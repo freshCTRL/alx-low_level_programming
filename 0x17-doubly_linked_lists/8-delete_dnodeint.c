@@ -24,6 +24,8 @@ tp = tp->next;
 n++;
 }
 
+if (*head != NULL)
+{
 temp = *head;
 if (index == 0)
 { /* deleteing first */
@@ -55,7 +57,6 @@ sec->next = NULL;
 sec->prev = NULL;
 free(sec);
 }
-}
 if (sec == NULL)
 {
 return (1);
@@ -63,6 +64,7 @@ return (1);
 else
 {
 return (-1);
+}
 }
 return (0);
 }
