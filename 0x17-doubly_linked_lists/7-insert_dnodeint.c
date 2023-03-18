@@ -28,13 +28,15 @@ temp->n = n;
 temp->next = NULL;
 
 k = 0;
-while (ptr->next != NULL)
+while
+(ptr->next != NULL)
 {
 ptr = ptr->next;
 k++;
 }
 
-if (*h != NULL)
+if
+(*h != NULL)
 {
 if
 (idx == 0)
@@ -44,10 +46,12 @@ temp->next = *h;
 *h = temp;
 }
 else
-if ((idx > 0) && (idx <= k))
+if
+((idx > 0) && (idx <= k))
 {
 j = 0;
-while (j < idx - 1)
+while
+(j < idx - 1)
 {
 tp = tp->next;
 j++;
@@ -57,14 +61,10 @@ tp->next->prev = temp;
 tp->next = temp;
 temp->prev = tp;
 }
-else
-if
-((!(idx < 0)) || (idx > k))
-{
-return (NULL);
 }
 
-if (temp->n == n)
+if
+(temp->n == n)
 {
 return (temp);
 }
