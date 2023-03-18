@@ -12,7 +12,7 @@ dlistint_t *temp;
 
 if (head != NULL)
 {
-return (NULL);
+return;
 }
 else
 {
