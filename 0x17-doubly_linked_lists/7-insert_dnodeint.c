@@ -29,7 +29,7 @@ temp->next = NULL;
 
 k = 0;
 while
-(ptr->next != NULL)
+(ptr != NULL)
 {
 ptr = ptr->next;
 k++;
@@ -47,7 +47,7 @@ temp->next = *h;
 }
 else
 if
-((idx > 0) && (idx <= k))
+((idx > 0) && (idx < k))
 {
 j = 0;
 while
