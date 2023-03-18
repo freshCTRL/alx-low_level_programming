@@ -25,7 +25,7 @@ n++;
 }
 
 temp = *head;
-if (*head != NULL)
+if ((*head != NULL) && (idx < k))
 {
 if (index == 0)
 { /* deleteing first */
