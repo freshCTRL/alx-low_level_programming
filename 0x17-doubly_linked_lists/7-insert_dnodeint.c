@@ -42,6 +42,11 @@ return (NULL);
 }
 else
 {
+if (!(idx > 0))
+{
+return (NULL);
+}
+else
 if
 ((idx == 0) && (k >= 1))
 {
@@ -65,10 +70,6 @@ tp->next->prev = temp;
 tp->next = temp;
 temp->prev = tp;
 }
-else
-if (!(idx > 0))
-{
-return (NULL);
 }
 
 if
