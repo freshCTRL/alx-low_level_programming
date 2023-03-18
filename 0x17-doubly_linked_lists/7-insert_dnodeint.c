@@ -17,7 +17,6 @@ dlistint_t *ptr = *h;
 unsigned int k;
 unsigned int j;
 
-
 if (temp == NULL)
 {
 return (NULL);
@@ -71,6 +70,10 @@ if
 (temp->n == n)
 {
 return (temp);
+}
+else
+{
+return (NULL);
 }
 
 return (NULL);
