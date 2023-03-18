@@ -8,13 +8,6 @@
  */
 void free_dlistint(dlistint_t *head)
 {
-
-if (head != NULL)
-{
-return;
-}
-else
-{
 dlistint_t *temp;
 
 while (head->next != NULL)
@@ -29,5 +22,4 @@ temp = NULL;
 
 free(head);
 head = NULL;
-}
 }
