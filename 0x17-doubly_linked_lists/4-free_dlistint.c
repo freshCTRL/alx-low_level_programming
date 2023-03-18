@@ -14,8 +14,8 @@ while (head->next != NULL)
 {
 temp = head;
 head = temp->next;
-temp->next = NULL;
 head->prev = NULL;
+temp->next = NULL;
 free(temp);
 temp = NULL;
 }
