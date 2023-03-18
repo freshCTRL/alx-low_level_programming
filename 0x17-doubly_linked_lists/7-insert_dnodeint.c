@@ -61,6 +61,9 @@ tp->next->prev = temp;
 tp->next = temp;
 temp->prev = tp;
 }
+else
+{
+return NULL;
 }
 
 if (temp->n == n)
