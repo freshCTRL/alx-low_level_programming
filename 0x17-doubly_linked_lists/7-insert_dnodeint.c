@@ -34,20 +34,23 @@ temp->n = n;
 temp->next = NULL;
 
 tp = *h;
-if ((idx > k) || (*h == NULL))
+if (idx > k)
 {
 return (NULL);
 }
 else
 {
-if (idx == 0)
+if (*h == NULL)
+{
+head = temp;
+}
+else if (idx == 0)
 {    /* insertion at the beginnning */
 temp->next = *h;
 (*h)->prev = temp;
 *h = temp;
 }
-else
-if (idx == k)
+else if (idx == k)
 { /* insertion at the end */
 while (tp->next != NULL)
 {
