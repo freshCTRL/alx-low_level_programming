@@ -36,7 +36,8 @@ k++;
 }
 
 if
-(*h == NULL) {
+(*h == NULL)
+{
 return (NULL);
 }
 else
