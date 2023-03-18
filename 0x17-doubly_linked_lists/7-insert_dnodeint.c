@@ -18,8 +18,7 @@ unsigned int k;
 unsigned int j;
 
 k = 0;
-while
-(ptr != NULL)
+while (ptr != NULL)
 {
 ptr = ptr->next;
 k++;
@@ -33,8 +32,6 @@ return (NULL);
 temp->prev = NULL;
 temp->n = n;
 temp->next = NULL;
-
-
 
 tp = *h;
 if ((idx > k) || (*h == NULL))

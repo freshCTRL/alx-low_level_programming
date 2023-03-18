@@ -25,39 +25,33 @@ n++;
 }
 
 temp = *head;
-if
-(*head != NULL)
+if (*head != NULL)
 {
-if
-(index == 0)
+if (index == 0)
 { /* deleteing first */
 *head = temp->next;
 temp->next = NULL;
 (*head)->prev = NULL;
 free(temp);
-if
-(temp == NULL)
+if (temp == NULL)
 {
 return (1);
 }
 }
 else
-if
-(index == n)
+if (index == n)
 { /*deleting the last node*/
 sec = temp->next;
 temp->next = NULL;
 sec->prev = NULL;
 free(sec);
-if
-(sec == NULL)
+if (sec == NULL)
 {
 return (1);
 }
 }
 else
-if
-((index > 0) && (index < n))
+if ((index > 0) && (index < n))
 { /* deleteing intemediate */
 i = 0;
 while (i < index - 1)
@@ -71,8 +65,7 @@ temp->next->prev = temp;
 sec->next = NULL;
 sec->prev = NULL;
 free(sec);
-if
-(sec == NULL)
+if (sec == NULL)
 {
 return (1);
 }
