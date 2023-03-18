@@ -34,11 +34,7 @@ ptr = ptr->next;
 k++;
 }
 
-if (*h == NULL)
-{
-return (NULL);
-}
-else
+if (*h != NULL)
 {
 if
 (idx == 0)
