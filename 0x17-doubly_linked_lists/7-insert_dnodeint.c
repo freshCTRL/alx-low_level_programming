@@ -36,7 +36,10 @@ k++;
 }
 
 if
-(*h != NULL)
+(*h == NULL) {
+return (NULL);
+}
+else
 {
 if
 ((idx == 0) && (k >= 1))
