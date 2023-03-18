@@ -34,7 +34,7 @@ temp->n = n;
 temp->next = NULL;
 
 tp = *h;
-if ((idx > k) || (*h == NULL))
+if (((idx > k)&&(!(idx > 0))) || (*h == NULL))
 {
 return (NULL);
 }

@@ -25,7 +25,7 @@ n++;
 }
 
 temp = *head;
-if ((*head != NULL) && (idx < k))
+if ((*head != NULL) && ((idx >= 0) && (idx < n)))
 {
 if (index == 0)
 { /* deleteing first */
@@ -39,7 +39,7 @@ return (1);
 }
 }
 else
-if (index == n)
+if (index == n - 1)
 { /*deleting the last node*/
 sec = temp->next;
 temp->next = NULL;
@@ -51,7 +51,7 @@ return (1);
 }
 }
 else
-if ((index > 0) && (index < n))
+if ((index > 0) && (index < n - 1))
 { /* deleteing intemediate */
 i = 0;
 while (i < index - 1)
