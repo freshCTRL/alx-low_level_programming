@@ -26,8 +26,4 @@ temp = NULL;
 free(head);
 head = NULL;
 }
-else
-{
-head = NULL;
-}
 }
