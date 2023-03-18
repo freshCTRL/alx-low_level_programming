@@ -73,7 +73,7 @@ temp->prev = tp;
 
 if (temp->n == n)
 {
-return (temp);
+return (*h);
 }
 
 return (NULL);
