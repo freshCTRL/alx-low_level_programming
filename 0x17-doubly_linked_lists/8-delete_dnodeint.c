@@ -6,83 +6,77 @@
  * @head: argument to delete_dnodeint_at_index function
  * @index: argument to delete_dnodeint_at_index function
  *
- * Return: 0 Success
-*/
+ * Return: 1 or -1
+ */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-dlistint_t *temp, *temp2;
-dlistint_t *temp5;
-dlistint_t *temp6, *temp7;
-unsigned int j;
+dlistint_t *tp;
+dlistint_t *sec;
+dlistint_t *temp;
+unsigned int i;
+unsigned int n;
 
-if (index == 0)
+n = 0;
+tp = *head;
+while (tp != NULL)
 {
-temp5 = *head;
-*head = (*head)->next;
-free(temp5);
-temp5 = NULL;
-(*head)->prev = NULL;
-if (temp5 == NULL)
-{
-return (1);
-}
-else
-{
-return (-1);
-}
-}
-else
-if
-(index == 1)
-{
-temp6 = (*head)->next;
-temp7 = temp6->prev;
-temp7->next = temp6->next;
-temp6->next->prev = temp7;
-free(temp6);
-temp6 = NULL;
-
-if (temp6 == NULL)
-{
-return (1);
-}
-else
-{
-return (-1);
+tp = tp->next;
+n++;
 }
 
-}
-else
-if
-(index > 1)
-{
-j = 0;
 temp = *head;
-while (j < index - 1)
+if
+(*head != NULL)
 {
-temp = temp->next;
-j++;
-}
-
-
-temp = temp->next;
-temp2 = temp->prev;
-temp2->next = temp->next;
-temp->next->prev = temp2;
+if
+(index == 0)
+{ /* deleteing first */
+*head = temp->next;
+temp->next = NULL;
+(*head)->prev = NULL;
 free(temp);
-
-temp = NULL;
-
-if (temp == NULL)
+if
+(temp == NULL)
 {
 return (1);
 }
+}
 else
+if
+(index == n)
+{ /*deleting the last node*/
+sec = temp->next;
+temp->next = NULL;
+sec->prev = NULL;
+free(sec);
+if
+(sec == NULL)
 {
+return (1);
+}
+}
+else
+if
+((index > 0) && (index < n))
+{ /* deleteing intemediate */
+i = 0;
+while (i < index - 1)
+{
+temp = temp->next;
+i++;
+}
+sec = temp->next;
+temp->next = sec->next;
+temp->next->prev = temp;
+sec->next = NULL;
+sec->prev = NULL;
+free(sec);
+if
+(sec == NULL)
+{
+return (1);
+}
+}
+}
 return (-1);
-}
-
-}
-
-return (0);
 }
