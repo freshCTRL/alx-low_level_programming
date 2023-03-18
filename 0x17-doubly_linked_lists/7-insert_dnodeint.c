@@ -66,6 +66,7 @@ tp->next = temp;
 temp->prev = tp;
 }
 else
+if (!(idx > 0))
 {
 return (NULL);
 }
