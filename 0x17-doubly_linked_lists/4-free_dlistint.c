@@ -8,14 +8,14 @@
  */
 void free_dlistint(dlistint_t *head)
 {
-dlistint_t *temp;
+dlistint_t *temp, *tp;
 temp = head;
-while (head != NULL)
+while (temp != NULL)
 {
-temp = temp->next;
-free(head);
-temp->prev = NULL;
-head = temp;
+tp = temp->next;
+tp->prev = NULL;
+free(temp);
+tp = temp;
 }
 
 }
