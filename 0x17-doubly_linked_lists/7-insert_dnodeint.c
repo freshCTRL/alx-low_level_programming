@@ -34,17 +34,12 @@ ptr = ptr->next;
 k++;
 }
 
-if (*h == NULL)
+if ((*h == NULL) || (idx > k))
 {
 return (NULL);
 }
 else
 {
-if (idx > k)
-{
-return (NULL);
-}
-else
 if
 (idx == 0)
 {
