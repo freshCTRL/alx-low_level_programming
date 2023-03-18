@@ -25,12 +25,6 @@ n++;
 }
 
 temp = *head;
-if (*head == NULL)
-{
-return 0;
-}
-else
-{
 if (index == 0)
 { /* deleteing first */
 *head = temp->next;
@@ -39,16 +33,14 @@ sec->next = NULL;
 (*head)->prev = NULL;
 free(sec);
 }
-else
-if (index == n - 1)
+else if (index == n - 1)
 { /*deleting the last node*/
 sec = temp->next;
 temp->next = NULL;
 sec->prev = NULL;
 free(sec);
 }
-else
-if ((index > 0) && (index < n - 1))
+else if ((index > 0) && (index < n - 1))
 { /* deleteing intemediate */
 i = 0;
 while (i < index - 1)
