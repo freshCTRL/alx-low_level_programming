@@ -19,7 +19,6 @@ temp->next = NULL;
 free(temp);
 temp = NULL;
 }
-
 free(head);
 head = NULL;
 }
