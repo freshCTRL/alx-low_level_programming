@@ -36,7 +36,7 @@ k++;
 }
 
 if
-(*h == NULL)
+((*h == NULL) || (idx >= k))
 {
 return (NULL);
 }
