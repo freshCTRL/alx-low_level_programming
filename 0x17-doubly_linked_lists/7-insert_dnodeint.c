@@ -66,15 +66,5 @@ temp->prev = tp;
 }
 }
 
-if
-(temp->n == n)
-{
-return (temp);
-}
-else
-{
-return (NULL);
-}
-
 return (NULL);
 }
