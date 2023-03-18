@@ -42,13 +42,8 @@ return (NULL);
 }
 else
 {
-if (!(idx > 0))
-{
-return (NULL);
-}
-else
 if
-((idx == 0) && (k >= 1))
+(idx == 0)
 {
 temp->next = *h;
 (*h)->prev = temp;
