@@ -70,6 +70,10 @@ if
 {
 return (temp);
 }
+else
+{
+return (NULL);
+}
 }
 
 return (NULL);
