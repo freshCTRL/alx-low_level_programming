@@ -34,7 +34,7 @@ ptr = ptr->next;
 k++;
 }
 
-if ((*h == NULL) || (idx > k))
+if (*h == NULL)
 {
 return (NULL);
 }
@@ -48,6 +48,7 @@ temp->next = *h;
 *h = temp;
 }
 else
+if ((idx > 0) && (idx <= k))
 {
 j = 0;
 while (j < idx - 1)
