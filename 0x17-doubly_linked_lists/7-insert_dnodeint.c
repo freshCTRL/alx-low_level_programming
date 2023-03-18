@@ -64,6 +64,12 @@ tp->next->prev = temp;
 tp->next = temp;
 temp->prev = tp;
 }
+
+if
+(temp->n == n)
+{
+return (temp);
+}
 }
 
 return (NULL);
