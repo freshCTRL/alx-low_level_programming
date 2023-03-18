@@ -34,7 +34,7 @@ ptr = ptr->next;
 k++;
 }
 
-if ((*h == NULL) || (idx > k))
+if ((*h == NULL) || ((idx > k) || (idx < k)))
 {
 return (NULL);
 }
