@@ -1,15 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
 /**
- * free_dlistint_t - Entry point
- * @head: argument to free_dlistint_t
- *
- * Description - No return value
- */
-#include "lists.h"
-#include <stdlib.h>
-/**
- * free_dlistint - Entry point
+ * free_dlistint - a FUNCTION THAT FREEs DOUBLE LINKED LIST
  * @head: argument to free_dlistint_t
  *
  * Description: set the head of a linked list to null
@@ -18,13 +10,15 @@ void free_dlistint(dlistint_t *head)
 {
 dlistint_t *temp;
 
-while (head != NULL)
+while (head->next != NULL)
 {
 temp = head;
-head = head->next;
+head = temp->next;
+temp->next = NULL;
+head->prev = NULL;
 free(temp);
 temp = NULL;
-head->prev = NULL;
 }
-
+free(head);
+head = NULL;
 }
