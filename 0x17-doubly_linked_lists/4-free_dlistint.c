@@ -12,6 +12,12 @@ void free_dlistint(dlistint_t *head)
 {
 dlistint_t *temp;
 
+if (head == NULL)
+{
+return;
+}
+else
+{
 while (head->next != NULL)
 {
 temp = head;
@@ -21,6 +27,8 @@ head->prev = NULL;
 free(temp);
 temp = NULL;
 }
+}
 free(head);
 head = NULL;
+}
 }
