@@ -63,7 +63,7 @@ temp->prev = tp;
 }
 else
 if
-((idx < 0) || (idx > k))
+((!(idx < 0)) || (idx > k))
 {
 return (NULL);
 }
