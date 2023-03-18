@@ -25,18 +25,13 @@ n++;
 }
 
 temp = *head;
-if (*head != NULL)
-{
 if (index == 0)
 { /* deleteing first */
 *head = temp->next;
-temp->next = NULL;
+sec = temp;
+sec->next = NULL;
 (*head)->prev = NULL;
-free(temp);
-if (temp == NULL)
-{
-return (1);
-}
+free(sec);
 }
 else
 if (index == n - 1)
@@ -45,10 +40,6 @@ sec = temp->next;
 temp->next = NULL;
 sec->prev = NULL;
 free(sec);
-if (sec == NULL)
-{
-return (1);
-}
 }
 else
 if ((index > 0) && (index < n - 1))
@@ -65,11 +56,13 @@ temp->next->prev = temp;
 sec->next = NULL;
 sec->prev = NULL;
 free(sec);
+}
 if (sec == NULL)
 {
 return (1);
 }
-}
-}
+else
+{
 return (-1);
+}
 }
