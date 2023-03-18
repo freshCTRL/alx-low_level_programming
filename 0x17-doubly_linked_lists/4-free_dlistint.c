@@ -12,11 +12,7 @@ void free_dlistint(dlistint_t *head)
 {
 dlistint_t *temp;
 
-if (head == NULL)
-{
-return;
-}
-else
+if (head != NULL)
 {
 while (head->next != NULL)
 {
@@ -27,8 +23,11 @@ head->prev = NULL;
 free(temp);
 temp = NULL;
 }
-}
 free(head);
+head = NULL;
+}
+else
+{
 head = NULL;
 }
 }
