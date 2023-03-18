@@ -62,8 +62,10 @@ tp->next = temp;
 temp->prev = tp;
 }
 else
+if
+((idx < 0) || (idx > k))
 {
-return NULL;
+return (NULL);
 }
 
 if (temp->n == n)
