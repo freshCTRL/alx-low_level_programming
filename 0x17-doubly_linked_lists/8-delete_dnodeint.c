@@ -65,7 +65,7 @@ sec = NULL;
 }
 else
 {
-return (0);
+exit(0);
 }
 }
 
