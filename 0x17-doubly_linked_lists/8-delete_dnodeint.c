@@ -11,7 +11,7 @@
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 dlistint_t *tp, *top;
-dlistint_t *sec;
+dlistint_t *sec, *tes;
 dlistint_t *temp;
 unsigned int i, n, k, j;
 
