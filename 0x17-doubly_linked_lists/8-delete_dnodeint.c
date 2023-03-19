@@ -29,9 +29,9 @@ temp = *head;
 if (index == 0)
 {
 *head = temp->next;
-(*head)->prev = NULL;
 free(temp);
 temp = NULL;
+(*head)->prev = NULL;
 }
 else if (index == n - 1)
 {
@@ -41,9 +41,9 @@ while (i < index - 1)
 temp = temp->next;
 }
 sec = temp->next;
-temp->next = NULL;
 free(sec);
 sec = NULL;
+temp->next = NULL;
 }
 else if ((index > 0) && (index < n - 1))
 {
