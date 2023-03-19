@@ -64,9 +64,10 @@ while (j < idx - 1)
 tp = tp->next;
 j++;
 }
-temp->next = tp->next;
-tp->next->prev = temp;
+sec = tp->next;
 tp->next = temp;
+sec->prev = temp;
+temp->next = sec;
 temp->prev = tp;
 }
 else
