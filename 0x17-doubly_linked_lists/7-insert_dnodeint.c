@@ -17,7 +17,7 @@ dlistint_t *ptr;
 unsigned int k;
 unsigned int j;
 
-if ((*h != NULL) && (!(idx > n)))
+if (*h != NULL)
 {
 k = 0;
 ptr = *h;
@@ -52,7 +52,7 @@ tp = tp->next;
 tp->next = temp;
 temp->prev = tp;
 }
-else if ((idx > 0) && (idx < k))
+else if (idx < k)
 { /* insertion at the middle */
 j = 0;
 while (j < idx - 1)
@@ -69,7 +69,6 @@ temp->prev = tp;
 if (temp->n == n)
 {
 return (temp);
-}
 }
 
 }
