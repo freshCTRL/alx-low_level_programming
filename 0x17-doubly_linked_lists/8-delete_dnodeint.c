@@ -56,8 +56,9 @@ temp = temp->next;
 j++;
 }
 sec = temp->next;
-temp->next = sec->next;
-sec->next->prev = temp;
+tes = sec->next;
+temp->next = tes;
+tes->prev = temp;
 sec->next = NULL;
 sec->prev = NULL;
 free(sec);
@@ -65,7 +66,7 @@ sec = NULL;
 }
 else
 {
-exit(0);
+return (0);
 }
 }
 
