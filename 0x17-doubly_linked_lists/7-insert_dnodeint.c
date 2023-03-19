@@ -13,11 +13,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 dlistint_t *temp = malloc(sizeof(dlistint_t));
 dlistint_t *tp;
-dlistint_t *ptr = *h;
+dlistint_t *ptr;
 unsigned int k;
 unsigned int j;
 
+if ((*h != NULL) && (!(idx > n)))
+{
 k = 0;
+ptr = *h;
 while (ptr != NULL)
 {
 ptr = ptr->next;
@@ -55,7 +58,7 @@ tp = tp->next;
 tp->next = temp;
 temp->prev = tp;
 }
-else
+else if ((idx > 0) && (idx < n))
 { /* insertion at the middle */
 j = 0;
 while (j < idx - 1)
@@ -75,5 +78,6 @@ if (temp->n == n)
 return (temp);
 }
 
+}
 return (NULL);
 }
