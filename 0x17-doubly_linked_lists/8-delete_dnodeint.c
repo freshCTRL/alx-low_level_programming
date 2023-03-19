@@ -29,7 +29,6 @@ temp = *head;
 if (index == 0)
 {
 *head = temp->next;
-temp->next = NULL;
 (*head)->prev = NULL;
 free(temp);
 temp = NULL;
@@ -43,7 +42,6 @@ temp = temp->next;
 }
 sec = temp->next;
 temp->next = NULL;
-sec->prev = NULL;
 free(sec);
 sec = NULL;
 }
@@ -59,8 +57,6 @@ sec = temp->next;
 tes = sec->next;
 temp->next = tes;
 tes->prev = temp;
-sec->next = NULL;
-sec->prev = NULL;
 free(sec);
 sec = NULL;
 }
