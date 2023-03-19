@@ -15,6 +15,8 @@ dlistint_t *sec;
 dlistint_t *temp;
 unsigned int i, n, k, j;
 
+if (*head != NULL)
+{
 n = 0;
 tp = *head;
 while (tp != NULL)
@@ -24,8 +26,6 @@ n++;
 }
 
 temp = *head;
-if (*head != NULL)
-{
 if (index == 0)
 {
 *head = temp->next;
@@ -67,7 +67,6 @@ else
 {
 return (0);
 }
-}
 
 k = 0;
 top = *head;
@@ -86,5 +85,6 @@ else
 return (1);
 }
 
+}
 return (0);
 }
