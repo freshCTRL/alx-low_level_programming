@@ -15,7 +15,7 @@ dlistint_t *sec;
 dlistint_t *temp;
 unsigned int i, n, k, j;
 
-if ((*head != NULL) && (idx < n))
+if ((*head != NULL) && (index < n))
 {
 n = 0;
 tp = *head;
@@ -37,7 +37,7 @@ temp = NULL;
 else if (index == n - 1)
 { /*deleting the last node*/
 i = 0;
-while (i < idx - 1)
+while (i < index - 1)
 {
 temp = temp->next;
 }
