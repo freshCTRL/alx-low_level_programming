@@ -37,12 +37,6 @@ temp->n = n;
 temp->next = NULL;
 
 tp = *h;
-if ((idx > k) || (*h == NULL))
-{
-return (NULL);
-}
-else
-{
 if (idx == 0)
 {    /* insertion at the beginnning */
 temp->next = *h;
@@ -58,7 +52,7 @@ tp = tp->next;
 tp->next = temp;
 temp->prev = tp;
 }
-else if ((idx > 0) && (idx < n))
+else if ((idx > 0) && (idx < k))
 { /* insertion at the middle */
 j = 0;
 while (j < idx - 1)
@@ -71,11 +65,11 @@ tp->next->prev = temp;
 tp->next = temp;
 temp->prev = tp;
 }
-}
 
 if (temp->n == n)
 {
 return (temp);
+}
 }
 
 }
