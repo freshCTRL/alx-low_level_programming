@@ -23,7 +23,7 @@ tp = tp->next;
 n++;
 }
 
-if ((*head != NULL) && (index < n))
+if (*head != NULL)
 {
 temp = *head;
 if (index == 0)
