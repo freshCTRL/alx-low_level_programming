@@ -17,7 +17,11 @@ dlistint_t *ptr;
 unsigned int k;
 unsigned int j;
 
-if (*h != NULL)
+if (*h == NULL)
+{
+return (NULL);
+}
+else
 {
 k = 0;
 ptr = *h;
