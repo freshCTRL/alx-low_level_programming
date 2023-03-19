@@ -23,9 +23,9 @@ tp = tp->next;
 n++;
 }
 
+temp = *head;
 if (*head != NULL)
 {
-temp = *head;
 if (index == 0)
 {
 *head = temp->next;
