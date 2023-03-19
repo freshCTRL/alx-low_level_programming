@@ -47,7 +47,7 @@ sec->prev = NULL;
 free(sec);
 sec = NULL;
 }
-else if (index < n - 1)
+else if ((index > 0) && (index < n - 1))
 {
 j = 0;
 while (j < index - 1)
