@@ -26,11 +26,8 @@ temp = NULL;
 }
 else if (index == n - 1) /*deleting at the end*/
 {
-i = 0;
-while (i < index - 1)
-{
+for (i = 0; i < index - 1; i++)
 temp = temp->next;
-}
 sec = temp->next;
 free(sec);
 sec = NULL;
