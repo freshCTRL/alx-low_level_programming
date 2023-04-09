@@ -17,9 +17,7 @@ if (idx > k)
 return (NULL);
 if (temp == NULL)
 return (NULL);
-temp->prev = NULL;
 temp->n = n;
-temp->next = NULL;
 if (*h != NULL)
 {
 tp = *h;
