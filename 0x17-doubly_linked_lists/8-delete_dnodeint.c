@@ -21,16 +21,7 @@ free(temp);
 temp = NULL;
 (*head)->prev = NULL;
 }
-else if (index == n - 1) /*deleting at the end*/
-{
-for (i = 0; i < index - 1; i++)
-temp = temp->next;
-sec = temp->next;
-free(sec);
-sec = NULL;
-temp->next = NULL;
-}
-else if ((index > 0) && (index < n - 1)) /*deleting at the middle*/
+else if ((index > 0) && (index <= n - 1)) /*deleting at the middle*/
 {
 for (j = 0; j < index - 1; j++)
 temp = temp->next;
