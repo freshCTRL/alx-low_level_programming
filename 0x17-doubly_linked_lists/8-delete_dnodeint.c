@@ -18,7 +18,6 @@ if (index == 0) /*deleting at the begining*/
 {
 *head = temp->next;
 free(temp);
-temp = NULL;
 (*head)->prev = NULL;
 }
 else if (index == n - 1) /*deleting at the end*/
