@@ -1,9 +1,9 @@
 #include "lists.h"
+#include <stdlib.h>
 /**
  * delete_dnodeint_at_index - Entry point
  * @head: argument to delete_dnodeint_at_index function
  * @index: argument to delete_dnodeint_at_index function
- *
  * Return: 1 or -1
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
