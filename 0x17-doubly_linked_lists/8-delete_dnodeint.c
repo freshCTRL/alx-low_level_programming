@@ -26,7 +26,6 @@ for (i = 0; i < index - 1; i++)
 temp = temp->next;
 sec = temp->next;
 free(sec);
-sec = NULL;
 temp->next = NULL;
 }
 else if ((index > 0) && (index <= n - 1)) /*deleting at the middle*/
@@ -38,7 +37,6 @@ tes = sec->next;
 temp->next = tes;
 tes->prev = temp;
 free(sec);
-sec = NULL;
 }
 }
 top = *head;
