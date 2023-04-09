@@ -8,32 +8,21 @@
  *
  * Return: 1 or -1
  */
-int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
-{
-dlistint_t *tp, *top;
-dlistint_t *sec, *tes;
-dlistint_t *temp;
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index){
+dlistint_t *top, *sec, *tes,*temp, *tp = *head;
 unsigned int i, n, k, j;
-
-n = 0;
-tp = *head;
-while (tp != NULL)
-{
+for (n = 0; tp != NULL; n++)
 tp = tp->next;
-n++;
-}
-
-if (*head != NULL)
-{
+if (*head != NULL) {
 temp = *head;
-if (index == 0)
+if (index == 0) /*deleting at the begining*/
 {
 *head = temp->next;
 free(temp);
 temp = NULL;
 (*head)->prev = NULL;
 }
-else if (index == n - 1)
+else if (index == n - 1) /*deleting at the end*/
 {
 i = 0;
 while (i < index - 1)
@@ -45,14 +34,10 @@ free(sec);
 sec = NULL;
 temp->next = NULL;
 }
-else if ((index > 0) && (index < n - 1))
+else if ((index > 0) && (index < n - 1)) /*deleting at the middle*/
 {
-j = 0;
-while (j < index - 1)
-{
+for (j = 0; j < index - 1; j++)
 temp = temp->next;
-j++;
-}
 sec = temp->next;
 tes = sec->next;
 temp->next = tes;
@@ -60,28 +45,12 @@ tes->prev = temp;
 free(sec);
 sec = NULL;
 }
-else
-{
-return (0);
 }
-}
-
-k = 0;
 top = *head;
-while (top)
-{
+for (k = 0; top; k++)
 top = top->next;
-k++;
-}
 
 if (k == n)
-{
 return (-1);
-}
-else
-{
 return (1);
-}
-
-return (0);
 }
