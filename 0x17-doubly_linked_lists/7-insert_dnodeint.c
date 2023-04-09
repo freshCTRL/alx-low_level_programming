@@ -5,11 +5,11 @@
  * @idx: argument to insert_dnodeint_at_index function
  * @n: argument to insert_dnodeint_at_index function
  * Return: NULL (Success)
- */
+*/
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-dlistint_t *tp, *temp = malloc(sizeof(dlistint_t));
-dlistint_t *ptr = *h;
+dlistint_t *temp = malloc(sizeof(dlistint_t));
+dlistint_t *tp, *ptr = *h;
 unsigned int k, j;
 for (k = 0; ptr != NULL; k++)
 ptr = ptr->next;
@@ -34,7 +34,7 @@ tp = tp->next;
 tp->next = temp;
 temp->prev = tp;
 }
-else if (idx > 0 && idx < k)
+else if ((idx > 0) && (idx < k))
 { /* insertion at the middle */
 for (j = 0; j < idx - 1; j++)
 tp = tp->next;
@@ -45,7 +45,7 @@ temp->prev = tp;
 }
 }
 if (*h == NULL)
-*h = temp; /* insertion in an empty list */
+*h = temp;
 if (temp->n == n)
 return (temp);
 return (NULL);
