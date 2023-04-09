@@ -8,12 +8,14 @@
  *
  * Return: 1 or -1
  */
-int delete_dnodeint_at_index(dlistint_t **head, unsigned int index){
-dlistint_t *top, *sec, *tes,*temp, *tp = *head;
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
+{
+dlistint_t *top, *sec, *tes, *temp, *tp = *head;
 unsigned int i, n, k, j;
 for (n = 0; tp != NULL; n++)
 tp = tp->next;
-if (*head != NULL) {
+if (*head != NULL)
+{
 temp = *head;
 if (index == 0) /*deleting at the begining*/
 {
@@ -49,7 +51,6 @@ sec = NULL;
 top = *head;
 for (k = 0; top; k++)
 top = top->next;
-
 if (k == n)
 return (-1);
 return (1);
