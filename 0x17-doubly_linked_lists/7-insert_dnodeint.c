@@ -14,7 +14,7 @@ unsigned int k, j;
 for (k = 0; ptr != NULL; k++)
 ptr = ptr->next;
 if (idx > k)
-return NULL;
+return (NULL);
 if (temp == NULL)
 return (NULL);
 temp->prev = NULL;
