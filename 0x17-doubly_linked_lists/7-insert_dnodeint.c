@@ -1,13 +1,11 @@
 #include "lists.h"
-#include <stdlib.h>
 /**
  * insert_dnodeint_at_index - Entry point
  * @h: argument to insert_dnodeint_at_index function
  * @idx: argument to insert_dnodeint_at_index function
  * @n: argument to insert_dnodeint_at_index function
- *
  * Return: NULL (Success)
-*/
+ */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 dlistint_t *tp, *temp = malloc(sizeof(dlistint_t));
@@ -20,8 +18,8 @@ return (NULL);
 temp->prev = NULL;
 temp->n = n;
 temp->next = NULL;
-if (*h == NULL) /* insertion in an empty list */
-*h = temp;
+if (*h != NULL)
+{
 tp = *h;
 if (idx > k)
 return (NULL);
@@ -47,6 +45,9 @@ tp->next->prev = temp;
 tp->next = temp;
 temp->prev = tp;
 }
+}
+if (*h == NULL)
+*h = temp; /* insertion in an empty list */
 if (temp->n == n)
 return (temp);
 return (NULL);
