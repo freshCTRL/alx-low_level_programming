@@ -1,6 +1,4 @@
 #include "lists.h"
-#include <stdlib.h>
-
 /**
  * delete_dnodeint_at_index - Entry point
  * @head: argument to delete_dnodeint_at_index function
@@ -10,19 +8,10 @@
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-dlistint_t *tp, *top;
-dlistint_t *sec, *tes;
-dlistint_t *temp;
+dlistint_t *top, *sec, *tes, *temp, tp = *head;
 unsigned int i, n, k, j;
-
-n = 0;
-tp = *head;
-while (tp != NULL)
-{
+for (n = 0 tp != NULL; n++)
 tp = tp->next;
-n++;
-}
-
 if (*head != NULL)
 {
 temp = *head;
@@ -35,11 +24,8 @@ temp = NULL;
 }
 else if (index == n - 1)
 {
-i = 0;
-while (i < index - 1)
-{
+for (i = 0; i < index - 1; i++)
 temp = temp->next;
-}
 sec = temp->next;
 free(sec);
 sec = NULL;
@@ -47,12 +33,8 @@ temp->next = NULL;
 }
 else if ((index > 0) && (index < n - 1))
 {
-j = 0;
-while (j < index - 1)
-{
+for (j = 0; j < index - 1; j++)
 temp = temp->next;
-j++;
-}
 sec = temp->next;
 tes = sec->next;
 temp->next = tes;
@@ -60,28 +42,11 @@ tes->prev = temp;
 free(sec);
 sec = NULL;
 }
-else
-{
-return (0);
 }
-}
-
-k = 0;
 top = *head;
-while (top)
-{
+for (k = 0; top; k++)
 top = top->next;
-k++;
-}
-
 if (k == n)
-{
 return (-1);
-}
-else
-{
 return (1);
-}
-
-return (0);
 }
