@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdlib.h>
 /**
  * delete_dnodeint_at_index - Entry point
  * @head: argument to delete_dnodeint_at_index function
