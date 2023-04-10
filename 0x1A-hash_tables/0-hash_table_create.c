@@ -10,5 +10,8 @@ hash_table_t *my_table = calloc(sizeof(hash_node_t), size);
 if (my_table == NULL)
 return (NULL);
 my_table->size = size;
+my_table->array = malloc(sizeof(my_table) / size);
+if (my_table->array == NULL)
+return (NULL);
 return (my_table);
 }
