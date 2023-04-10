@@ -13,6 +13,8 @@ hash_table_t *table;
 table = malloc((size / 2) * sizeof(hash_table_t));
 if (table == NULL)
 return (NULL);
+for (i = 0; i < size; i++)
+table->array[i] = NULL;
 
 return (table);
 }
