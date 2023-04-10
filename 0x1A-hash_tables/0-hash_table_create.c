@@ -6,9 +6,9 @@
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-if (size == 0)
-return (NULL);
 hash_table_t *my_table = calloc(sizeof(hash_table_t), size);
+if (size == 0)
+return NULL;
 if (my_table == NULL)
 return (NULL);
 my_table->size = size;
