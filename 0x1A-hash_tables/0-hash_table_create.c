@@ -16,7 +16,11 @@ my_table->size = size;
 my_table->array = malloc(sizeof(hash_node_t) * my_table->size);
 
 for (i = 0; i < size; i++)
+{
+my_table->array[i]->value = NULL;
+my_table->array[i]->key = NULL;
 my_table->array[i] = NULL;
+}
 
 if (my_table->array == NULL)
 {
