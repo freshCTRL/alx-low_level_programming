@@ -22,11 +22,7 @@ return (NULL);
 }
 
 for (i = 0; i < size; i++)
-{
-my_table->array[i]->value = NULL;
-my_table->array[i]->key = NULL;
 my_table->array[i] = NULL;
-}
 
 return (my_table);
 }
