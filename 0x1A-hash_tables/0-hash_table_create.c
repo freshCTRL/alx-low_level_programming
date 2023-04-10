@@ -14,11 +14,16 @@ hash_table_t *table;
 
 array = malloc(sizeof(hash_node_t));
 
+if (array == NULL)
+return (NULL);
 array->key = NULL;
 array->value = NULL;
 array->next = NULL;
 
 table = malloc(sizeof(hash_table_t));
+
+if (table == NULL)
+return (NULL);
 table->size = size;
 table->array = malloc(size * sizeof(array));
 
