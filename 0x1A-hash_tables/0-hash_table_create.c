@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+#include <stdlib.h>
 /**
  * hash_table_create - Entry point
  * @size: argument to hash_table_create function
@@ -12,6 +13,9 @@ return (NULL);
 my_table->size = size;
 my_table->array = malloc(sizeof(my_table) / my_table->size);
 if (my_table->array == NULL)
+{
+free(my_table);
 return (NULL);
+}
 return (my_table);
 }
