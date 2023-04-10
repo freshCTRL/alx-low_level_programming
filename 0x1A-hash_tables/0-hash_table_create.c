@@ -12,6 +12,8 @@ if (my_table == NULL)
 return (NULL);
 if (my_table->array == NULL)
 return (NULL);
+if (size == 0)
+return (NULL);
 my_table->size = size;
 return (my_table);
 }
