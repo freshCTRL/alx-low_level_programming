@@ -17,6 +17,7 @@ if (my_table->array == NULL)
 free(my_table);
 return (NULL);
 }
+my_table->size = size;
 for (i = 0; i < size; i++)
 my_table->array[i] = NULL;
 
