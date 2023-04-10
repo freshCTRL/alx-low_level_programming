@@ -27,5 +27,12 @@ return (NULL);
 table->size = size;
 table->array = malloc(size * sizeof(array));
 
+if (table->array == NULL)
+{
+free(table);
+table = NULL;
+return (NULL);
+}
+
 return (table);
 }
