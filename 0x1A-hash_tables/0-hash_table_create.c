@@ -25,4 +25,3 @@ my_table->array[i] = NULL;
 
 return (my_table);
 }
-
