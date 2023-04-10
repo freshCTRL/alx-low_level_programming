@@ -19,13 +19,10 @@ if (my_table->array == NULL)
 free(my_table);
 return (NULL);
 }
-hash_node_t *array = malloc(sizeof(hash_node_t));
 
 for (i = 0; i < size; i++)
-{
 my_table->array[i] = NULL;
-}
-
 
 return (my_table);
 }
+
