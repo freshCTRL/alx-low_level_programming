@@ -13,7 +13,7 @@ if (my_table == NULL)
 return (NULL);
 my_table->size = size;
 
-my_table->array = malloc(sizeof(hash_node_t) * size);
+my_table->array = malloc((sizeof(size)+1) * size);
 
 if (my_table->array == NULL)
 {
