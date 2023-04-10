@@ -7,11 +7,12 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 hash_table_t *my_table = malloc(sizeof(hash_table_t));
+hash_node_t *array1 = malloc(sizeof(hash_node_t));
 if (my_table == NULL)
 return (NULL);
 if (size == 0)
 return (NULL);
 my_table->size = size;
-my_table->array = NULL;
+my_table->array = array1;
 return (my_table);
 }
