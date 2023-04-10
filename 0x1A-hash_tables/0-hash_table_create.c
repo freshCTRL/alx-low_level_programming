@@ -13,7 +13,7 @@ unsigned long int i;
 hash_node_t *array;
 hash_table_t *table;
 
-array = calloc(1, sizeof(hash_node_t));
+array = malloc(1 * sizeof(hash_node_t));
 
 if (array == NULL)
 return (NULL);
@@ -21,13 +21,13 @@ array->key = NULL;
 array->value = NULL;
 array->next = NULL;
 
-table = malloc(sizeof(hash_table_t));
+table = malloc(1 * sizeof(hash_table_t));
 
 if (table == NULL)
 return (NULL);
 table->size = size;
 
-table->array = calloc(size, sizeof(hash_node_t));
+table->array = malloc(size * sizeof(array));
 
 if (table->array == 0)
 return (NULL);
