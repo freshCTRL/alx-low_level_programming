@@ -8,6 +8,7 @@
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
+unsigned int i;
 hash_node_t *array;
 hash_table_t *table;
 
