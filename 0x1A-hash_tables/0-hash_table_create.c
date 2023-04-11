@@ -11,15 +11,6 @@ unsigned long int i;
 hash_table_t *table;
 hash_node_t *array;
 
-array = malloc(sizeof(hash_node_t));
-
-if (array == NULL)
-return (NULL);
-
-array->key = NULL;
-array->value = NULL;
-array->next = NULL;
-
 table = malloc(1 * sizeof(hash_table_t));
 
 if (table == NULL)
@@ -36,7 +27,7 @@ return (NULL);
 }
 
 for (i = 0; i < size; i++)
-table->array[i] = array;
+table->array[i] = NULL;
 
 return (table);
 }
