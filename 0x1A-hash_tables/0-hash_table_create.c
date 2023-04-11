@@ -33,7 +33,7 @@ if (array == NULL)
 free(table->array);
 table->array = NULL;
 free(table);
-return NULL;
+return (NULL);
 }
 
 array->key = "";
