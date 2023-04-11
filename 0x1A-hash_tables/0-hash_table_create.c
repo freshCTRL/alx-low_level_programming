@@ -16,7 +16,7 @@ array->value = "";
 array->next = NULL;
 
 array = malloc(sizeof(hash_node_t));
-table = malloc(1 * sizeof(hash_table_t);
+table = malloc(1 * sizeof(hash_table_t));
 
 if (table == NULL)
 return (NULL);
