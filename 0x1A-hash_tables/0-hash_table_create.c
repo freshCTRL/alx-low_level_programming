@@ -12,18 +12,13 @@ unsigned int i;
 hash_node_t *array;
 hash_table_t *table;
 
-array->key = "";
-array->value = "";
-array->next = NULL;
-
-array = malloc(sizeof(hash_node_t));
 table = malloc(1 * sizeof(hash_table_t));
 
 if (table == NULL)
 return (NULL);
 
 table->size = size;
-table->array = malloc(size * sizeof(array));
+table->array = malloc(size * sizeof(hash_node_t));
 
 if (table->array == NULL)
 {
@@ -31,6 +26,19 @@ free(table);
 table = NULL;
 return (NULL);
 }
+
+array = malloc(1 * sizeof(hash_node_t));
+if (array == NULL)
+{
+free(table->array);
+table->array = NULL;
+free(table);
+return NULL;
+}
+
+array->key = "";
+array->value = "";
+array->next = NULL;
 
 i = 0;
 for (; i < size; ++i)
