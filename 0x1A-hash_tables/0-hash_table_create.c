@@ -17,19 +17,13 @@ if (table == NULL)
 return (NULL);
 
 table->size = size;
-table->array = malloc(size * sizeof(hash_node_t));
+table->array = malloc(table->size * sizeof(hash_node_t));
 
 if (table->array == NULL)
 {
 free(table);
 table = NULL;
 return (NULL);
-}
-
-i = 0;
-for (; i < size; ++i)
-{
-table->array[i] = NULL;
 }
 
 return (table);
