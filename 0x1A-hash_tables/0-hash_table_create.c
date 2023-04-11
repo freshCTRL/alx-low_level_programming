@@ -5,7 +5,6 @@
  *
  * Return: NULL if malloc fails else address of newtable.
  */
-
 hash_table_t *hash_table_create(unsigned long int size)
 {
 unsigned long int i;
