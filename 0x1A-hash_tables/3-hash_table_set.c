@@ -45,7 +45,7 @@ for (i = 0; ((i < ht->size) && (stp != 1)); i++)
 {
 if (ht->array[i] == NULL)
 {
-ht->array[i] = malloc(sizeof(sizeof(ht->size));
+ht->array[i] = malloc(sizeof(ht->size));
 if (ht->array[i] == NULL)
 return (0);
 ht->array[i]->key = strdup(key);
