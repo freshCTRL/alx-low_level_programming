@@ -27,12 +27,28 @@ strcat(value, ht->array[idx]->value);
 }
 else
 {
+if (ht->array[idx]->next != NULL)
+{
+while (ht->array[idx] != NULL)
+{
+if (strcmp(ht->array[idx]->key, key) == 0)
+strcat(value, ht->array[idx]->value);
+ht->array[idx] = ht->array[idx]->next;
+}
+}
+if (strcmp(value, "") == 0)
+{
 for (i = 0; i < ht->size; i++)
 {
 if (ht->array[i] != NULL)
 {
+while (ht->array[i] != NULL)
+{
+ht->array[i] = ht->array[i]->next;
 if (strcmp(ht->array[i]->key, key) == 0)
 strcat(value, ht->array[i]->value);
+}
+}
 }
 }
 }

@@ -20,13 +20,21 @@ while (ht->array[i]->next != NULL)
 {
 ptr = ht->array[i];
 ht->array[i] = ht->array[i]->next;
+ptr->key = NULL;
+ptr->value = NULL;
+ptr->next = NULL;
 free(ptr);
 ptr = NULL;
 }
+ht->array[i]->key = NULL;
+ht->array[i]->value = NULL;
+ht->array[i]->next = NULL;
 free(ht->array[i]);
 ht->array[i] = NULL;
 }
 }
+free(ht->array);
+ht->array = NULL;
 free(ht);
 ht = NULL;
 }

@@ -3,7 +3,8 @@
 /**
  * hash_table_print - Entry point.
  * @ht: argument to hash_table_t
- * Return: value if suceeded else 0
+ *
+ * Description - prints the table.
 */
 void hash_table_print(const hash_table_t *ht)
 {
@@ -25,6 +26,17 @@ if (i != size)
 {
 printf("%c", ',');
 printf("%c", ' ');
+}
+while (ht->array[i]->next)
+{
+ht->array[i] = ht->array[i]->next;
+printf("\'%s\':", ht->array[i]->key);
+printf("\'%s\'", ht->array[i]->value);
+if (i != size)
+{
+printf("%c", ',');
+printf("%c", ' ');
+}
 }
 }
 }

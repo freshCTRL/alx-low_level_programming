@@ -19,7 +19,7 @@ if (idx < ht->size)
 {
 if (ht->array[idx] == NULL)
 {
-ht->array[idx] = malloc(1 * sizeof(ht->size));
+ht->array[idx] = malloc(sizeof(hash_node_t));
 if (ht->array[idx] == NULL) /*when the array index is null*/
 return (0);
 ht->array[idx]->key = strdup(key);
@@ -30,7 +30,7 @@ else
 {
 if (strcmp(ht->array[idx]->key, key) == 0)
 { /*when the array idx is not null and the key are the same and hash to the same value(idx)*/
-hash_node_t *new_entry = malloc(sizeof(ht->size));
+hash_node_t *new_entry = malloc(sizeof(hash_node_t));
 if (new_entry == NULL)
 return (0);
 new_entry->key = strdup(key);
@@ -45,13 +45,23 @@ for (i = 0; ((i < ht->size) && (stp != 1)); i++)
 {
 if (ht->array[i] == NULL)
 {
-ht->array[i] = malloc(sizeof(ht->size));
+ht->array[i] = malloc(sizeof(hash_node_t));
 if (ht->array[i] == NULL)
 return (0);
 ht->array[i]->key = strdup(key);
 ht->array[i]->value = strdup(value);
 ht->array[i]->next = NULL;
 stp = 1;
+}
+else
+{
+hash_node_t *new_entry = malloc(sizeof(hash_node_t));
+if (new_entry == NULL)
+return (0);
+new_entry->key = strdup(key);
+new_entry->value = strdup(value);
+new_entry->next = ht->array[idx];
+ht->array[idx] = new_entry;
 }
 }
 }
