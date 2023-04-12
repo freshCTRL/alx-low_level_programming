@@ -8,7 +8,12 @@
 */
 void hash_table_print(const hash_table_t *ht)
 {
-unsigned long int i, size = ht->size, stop = 0;
+unsigned long int i;
+unsigned int long size;
+int stop;
+
+size = ht->size;
+stop = 0;
 while ((size > 0) && (stop != 1))
 {
 size--;

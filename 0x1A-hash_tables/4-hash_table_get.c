@@ -9,21 +9,18 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 unsigned long int idx, i;
-char value[50] = "";
-char *k, *v;
+if (strcmp(key, "") == 0)
+return (NULL);
 if (ht == NULL)
 return (NULL);
-k = strdup(key);
-if (strcmp(k, "") == 0)
-return (NULL);
-idx = key_index((const unsigned char *)k, ht->size);
+idx = key_index((const unsigned char *)key, ht->size);
 if (ht->array[idx] == NULL)
 return (NULL);
 if (ht->array[idx] != NULL)
 {
 if (strcmp(ht->array[idx]->key, key) == 0)
 {
-strcat(value, ht->array[idx]->value);
+return (ht->array[idx]->value);
 }
 else
 {
@@ -32,12 +29,10 @@ if (ht->array[idx]->next != NULL)
 while (ht->array[idx] != NULL)
 {
 if (strcmp(ht->array[idx]->key, key) == 0)
-strcat(value, ht->array[idx]->value);
+return (ht->array[idx]->value);
 ht->array[idx] = ht->array[idx]->next;
 }
 }
-if (strcmp(value, "") == 0)
-{
 for (i = 0; i < ht->size; i++)
 {
 if (ht->array[i] != NULL)
@@ -46,15 +41,11 @@ while (ht->array[i] != NULL)
 {
 ht->array[i] = ht->array[i]->next;
 if (strcmp(ht->array[i]->key, key) == 0)
-strcat(value, ht->array[i]->value);
+return (ht->array[i]->value);
 }
 }
 }
 }
 }
-}
-v = strdup(value);
-if (strcmp(v, "") != 0)
-return (v);
 return (NULL);
 }

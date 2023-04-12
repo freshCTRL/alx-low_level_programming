@@ -10,11 +10,9 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 unsigned long int idx, i, stp, r;
-char *k;
 if (strcmp(key, "") == 0)
 return (0);
-k = strdup(key);
-idx = key_index((const unsigned char *)k, ht->size);
+idx = key_index((const unsigned char *)key, ht->size);
 if (idx < ht->size)
 {
 if (ht->array[idx] == NULL)
