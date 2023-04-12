@@ -46,6 +46,8 @@ for (i = 0; ((i < ht->size) && (stp != 1)); i++)
 if (ht->array[i] == NULL)
 {
 ht->array[i] = malloc(sizeof(hash_node_t));
+if (ht->array[i] == NULL)
+return (0);
 ht->array[i]->key = strdup(key);
 ht->array[i]->value = strdup(value);
 ht->array[i]->next = NULL;
