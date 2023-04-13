@@ -27,7 +27,11 @@ ht->array[idx]->next = NULL;
 else
 {
 if (strcmp(ht->array[idx]->key, key) == 0)
-{ /*when the array idx is not null and the key are the same and hash to the same value(idx)*/
+{
+/**
+*when the array idx is not null and
+*the key are thesame and hash to the same value(idx)
+*/
 hash_node_t *new_entry = malloc(sizeof(ht->size));
 if (new_entry == NULL)
 return (0);
@@ -37,7 +41,11 @@ new_entry->next = ht->array[idx];
 ht->array[idx] = new_entry;
 }
 else if (strcmp(ht->array[idx]->key, key) != 0)
-{ /* when the array index is not null and keys are different but hash to the same value(idx) */
+{
+/**
+*when the array index is not null and keys
+*are different but hash to the same value(idx)
+*/
 stp = 0;
 for (i = 0; ((i < ht->size) && (stp != 1)); i++)
 {
