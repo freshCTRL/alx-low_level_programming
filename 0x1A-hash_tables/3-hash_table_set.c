@@ -51,7 +51,8 @@ ht->array[i]->value = strdup(value);
 ht->array[i]->next = NULL;
 stp = 1;
 }
-else
+}
+if (stp != 1)
 {
 hash_node_t *new_entry = malloc(sizeof(ht->size));
 if (new_entry == NULL)
