@@ -65,7 +65,6 @@ ht->array[idx] = new_entry;
 }
 }
 }
-}
 for (r = 0; r < ht->size; r++)
 {
 if (ht->array[r] != NULL)
