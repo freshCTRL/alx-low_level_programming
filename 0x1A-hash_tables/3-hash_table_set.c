@@ -17,6 +17,7 @@ return (0);
 if (strcmp(key, "") == 0)
 return (0);
 idx = key_index((const unsigned char *)key, ht->size);
+ptr = ht->array[idx];
 if (idx < ht->size)
 {
 if (ht->array[idx] == NULL)
@@ -30,7 +31,6 @@ ht->array[idx]->next = NULL;
 }
 else
 {
-ptr = ht->array[idx];
 if (strcmp(ht->array[idx]->key, key) == 0)
 {
 ht->array[idx]->value = strdup(value);
@@ -45,7 +45,7 @@ ht->array[idx]->value = strdup(value);
 stp = 1;
 }
 }
-if (stp != 1)
+if (strcmp(ht->array[idx]->key, key) != 0)
 {
 ht->array[idx] = ptr;
 new_entry = malloc(sizeof(ht->size));
@@ -55,7 +55,7 @@ new_entry->key = strdup(key);
 new_entry->value = strdup(value);
 new_entry->next = ht->array[idx];
 ht->array[idx] = new_entry;
-}
+}    
 }
 }
 if (strcmp(ht->array[idx]->key, key) == 0)
