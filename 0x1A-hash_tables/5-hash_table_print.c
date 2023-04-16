@@ -7,7 +7,7 @@
 void hash_table_print(const hash_table_t *ht)
 {
 unsigned long int i, stop, size = ht->size;
-for (stop = 0; ((size > 0) && (stop != 1)); size--) 
+for (stop = 0; ((size > 0) && (stop != 1)); size--)
 {
 if (ht->array[size] != NULL)
 stop = 1;
@@ -28,7 +28,7 @@ while (ht->array[i]->next != NULL)
 {
 ht->array[i] = ht->array[i]->next;
 printf("\'%s\':", ht->array[i]->key);
-printf("\'%s\'", ht->array[i]->value);
+printf(" \'%s\'", ht->array[i]->value);
 if (i != size)
 {
 printf("%c", ',');
