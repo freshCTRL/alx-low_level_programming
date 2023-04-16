@@ -32,6 +32,8 @@ ht->array[idx]->next = NULL;
 }
 else
 {
+if (strcmp(ht->array[idx]->key, key) != 0)
+{
 hash_node_t *new_entry = malloc(sizeof(ht->size));
 if (new_entry == NULL)
 return (0);
@@ -39,6 +41,11 @@ new_entry->key = strdup(key);
 new_entry->value = strdup(value);
 new_entry->next = ht->array[idx];
 ht->array[idx] = new_entry;
+}
+else
+{
+ht->array[idx]->value = strdup(value);
+}
 }
 }
 if (strcmp(ht->array[idx]->key, key) == 0)
