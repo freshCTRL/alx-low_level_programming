@@ -32,14 +32,13 @@ if (ht->array[idx] == NULL) {
     } else {
         if (ht->array[idx]->next != NULL) {
             ptr = ht->array[idx];
-            while ((ht->array[idx] != NULL) && (stp != 1)) {
-                ht->array[idx] = ht->array[idx]->next;
-                if (strcmp(ht->array[idx]->key, key) == 0) {
-                    ht->array[idx]->value = strdup(value);
+            while ((ptr != NULL) && (stp != 1)) {
+                ptr = ptr->next;
+                if (strcmp(ptr->key, key) == 0) {
+                    ptr->value = strdup(value);
                     stp = 1;
                 }
-                if ((stp != 1) && (ht->array[idx] == NULL)) {
-                    ht->array[idx] = ptr;
+                if ((stp != 1) && (ptr == NULL)) {
                     new_entry = malloc(sizeof(ht->size));
                     if (new_entry == NULL)
                         return (0);
