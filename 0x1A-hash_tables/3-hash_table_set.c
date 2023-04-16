@@ -8,8 +8,9 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-unsigned long int idx, stp = 0;
-hash_node_t *new_entry = NULL, *ptr = NULL;
+unsigned long int idx;
+int stp = 0;
+hash_node_t *new_entry = NULL;
 if (ht == NULL)
 return (0);
 if (ht->array == NULL)
@@ -17,7 +18,6 @@ return (0);
 if (strcmp(key, "") == 0)
 return (0);
 idx = key_index((const unsigned char *)key, ht->size);
-ptr = ht->array[idx];
 if (idx < ht->size)
 {
 if (ht->array[idx] == NULL)
@@ -31,12 +31,10 @@ ht->array[idx]->next = NULL;
 }
 else
 {
-if (strcmp(ht->array[idx]->key, key) == 0)
+if (strcmp(ht->array[idx]->key, key) != 0) 
 {
-ht->array[idx]->value = strdup(value);
-stp = 1;
-}
-while ((ht->array[idx]->next != NULL) && (stp != 1))
+if (ht->array[idx]->next != NULL)
+while ((ht->array[idx]) && (stp != 1))
 {
 ht->array[idx] = ht->array[idx]->next;
 if (strcmp(ht->array[idx]->key, key) == 0)
@@ -45,17 +43,21 @@ ht->array[idx]->value = strdup(value);
 stp = 1;
 }
 }
-if (strcmp(ht->array[idx]->key, key) != 0)
+if (stp != 1)
 {
-ht->array[idx] = ptr;
 new_entry = malloc(sizeof(ht->size));
 if (new_entry == NULL)
 return (0);
 new_entry->key = strdup(key);
 new_entry->value = strdup(value);
 new_entry->next = ht->array[idx];
-ht->array[idx] = new_entry;
-}    
+ht->array[idx] = new_entry;    
+}
+}
+else
+{
+ht->array[idx]->value = strdup(value);
+}
 }
 }
 if (strcmp(ht->array[idx]->key, key) == 0)
