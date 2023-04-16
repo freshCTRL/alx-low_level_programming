@@ -3,14 +3,13 @@
 /**
  * hash_table_print - Entry point.
  * @ht: argument to hash_table_t
- *
- * Description - prints the table.
+ * Return: value if suceeded else 0
 */
 void hash_table_print(const hash_table_t *ht)
 {
 unsigned long int i;
-unsigned int long size;
-int stop;
+unsigned long int size;
+unsigned long int stop;
 
 size = ht->size;
 stop = 0;
@@ -20,8 +19,9 @@ size--;
 if (ht->array[size] != NULL)
 stop = 1;
 }
+i = 0;
 printf("%c", '{');
-for (i = 0; i <= size; i++)
+while (i <= size)
 {
 if (ht->array[i] != NULL)
 {
@@ -32,18 +32,17 @@ if (i != size)
 printf("%c", ',');
 printf("%c", ' ');
 }
-while (ht->array[i]->next)
-{
+/* while (ht->array[i]->next != NULL) {
 ht->array[i] = ht->array[i]->next;
 printf("\'%s\':", ht->array[i]->key);
 printf("\'%s\'", ht->array[i]->value);
-if (i != size)
-{
+if (i != size) {
 printf("%c", ',');
 printf("%c", ' ');
 }
+}*/
 }
-}
+i++;
 }
 printf("%c\n", '}');
 }

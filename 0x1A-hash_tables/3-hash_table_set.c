@@ -10,6 +10,11 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 unsigned long int idx, i, stp, r;
+
+if (ht == NULL)
+return (0);
+if (ht->array == NULL)
+return (0);
 if (strcmp(key, "") == 0)
 return (0);
 idx = key_index((const unsigned char *)key, ht->size);
@@ -40,13 +45,31 @@ new_entry->value = strdup(value);
 new_entry->next = ht->array[idx];
 ht->array[idx] = new_entry;
 }
-else if (strcmp(ht->array[idx]->key, key) != 0)
+else
 {
 /**
 *when the array index is not null and keys
 *are different but hash to the same value(idx)
 */
 stp = 0;
+for (i = 0; ((i < ht->size) && (stp != 1)); i++)
+{
+if (ht->array[i] != NULL)
+{
+if (strcmp(ht->array[i]->key, key) == 0)
+{
+ht->array[i] = malloc(sizeof(ht->size));
+if (ht->array[i] == NULL)
+return (0);
+ht->array[i]->key = strdup(key);
+ht->array[i]->value = strdup(value);
+ht->array[i]->next = NULL;
+stp = 1;
+}
+}
+} 
+if (stp != 1)
+{
 for (i = 0; ((i < ht->size) && (stp != 1)); i++)
 {
 if (ht->array[i] == NULL)
@@ -58,6 +81,7 @@ ht->array[i]->key = strdup(key);
 ht->array[i]->value = strdup(value);
 ht->array[i]->next = NULL;
 stp = 1;
+}
 }
 }
 if (stp != 1)
