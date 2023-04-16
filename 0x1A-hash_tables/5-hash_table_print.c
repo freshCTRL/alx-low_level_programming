@@ -32,15 +32,6 @@ if (i != size)
 printf("%c", ',');
 printf("%c", ' ');
 }
-/* while (ht->array[i]->next != NULL) {
-ht->array[i] = ht->array[i]->next;
-printf("\'%s\':", ht->array[i]->key);
-printf("\'%s\'", ht->array[i]->value);
-if (i != size) {
-printf("%c", ',');
-printf("%c", ' ');
-}
-}*/
 }
 i++;
 }

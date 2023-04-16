@@ -67,7 +67,7 @@ ht->array[i]->next = NULL;
 stp = 1;
 }
 }
-} 
+}
 if (stp != 1)
 {
 for (i = 0; ((i < ht->size) && (stp != 1)); i++)

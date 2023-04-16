@@ -3,7 +3,7 @@
 /**
  * hash_table_get - Entry point.
  * @ht: argument to hash_table_get
- * @ht: argument to hash_table_get
+ * @key: argument to hash_table_get
  * Return: 0 if failed else 1.
 */
 char *hash_table_get(const hash_table_t *ht, const char *key)
