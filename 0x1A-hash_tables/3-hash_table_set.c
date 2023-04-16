@@ -31,14 +31,15 @@ ht->array[idx]->next = NULL;
 else
 {
 ptr = ht->array[idx];
-while ((ptr != NULL) && (strcmp(ptr->key, key) != 0))
+while ((ptr != NULL) && (stp != 1))
 {
-if (strcmp(ht->array[idx]->key, key) == 0)
+if (strcmp(ptr->key, key) == 0)
+{
+ht->array[idx]->value = strdup(value);
 stp = 1;
+}
 ptr = ptr->next;
 }
-if (stp == 1)
-ht->array[idx]->value = strdup(value);
 if (stp == 0)
 {
 hash_node_t *new_entry = malloc(sizeof(ht->size));
