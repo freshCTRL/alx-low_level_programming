@@ -1,17 +1,14 @@
 #include "hash_tables.h"
-#include <string.h>
 /**
  * hash_table_set - Entry point.
  * @ht: argument to hash_table_set
  * @key:argument to hash_table_set
  * @value: argument to hash_table_set
- *
  * Return: 0 if failed else 1
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 unsigned long int idx;
-
 if (ht == NULL)
 return (0);
 if (ht->array == NULL)
