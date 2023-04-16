@@ -9,6 +9,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 unsigned long int idx, stp = 0;
+hash_node_t *new_entry = NULL;
 hash_node_t *ptr = NULL;
 if (ht == NULL)
 return (0);
@@ -48,7 +49,7 @@ ht->array[idx] = ht->array[idx]->next;
 if (stp != 1)
 {
 ht->array[idx] = ptr;
-hash_node_t *new_entry = malloc(sizeof(ht->size));
+new_entry = malloc(sizeof(ht->size));
 if (new_entry == NULL)
 return (0);
 new_entry->key = strdup(key);
