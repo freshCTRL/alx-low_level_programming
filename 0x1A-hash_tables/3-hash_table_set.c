@@ -31,7 +31,7 @@ ht->array[idx]->next = NULL;
 }
 else
 {
-if (strcmp(ht->array[idx]->key, key) != 0) 
+if (strcmp(ht->array[idx]->key, key) != 0)
 {
 if (ht->array[idx]->next != NULL)
 while ((ht->array[idx]) && (stp != 1))
@@ -51,7 +51,7 @@ return (0);
 new_entry->key = strdup(key);
 new_entry->value = strdup(value);
 new_entry->next = ht->array[idx];
-ht->array[idx] = new_entry;    
+ht->array[idx] = new_entry;
 }
 }
 else
