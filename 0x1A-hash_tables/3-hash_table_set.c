@@ -9,8 +9,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 unsigned long int idx, stp = 0;
-hash_node_t *new_entry = NULL;
-hash_node_t *ptr = NULL;
+hash_node_t *new_entry = NULL, *ptr = NULL;
 if (ht == NULL)
 return (0);
 if (ht->array == NULL)
@@ -39,12 +38,12 @@ stp = 1;
 }
 while ((ht->array[idx]->next != NULL) && (stp != 1))
 {
+ht->array[idx] = ht->array[idx]->next;
 if (strcmp(ht->array[idx]->key, key) == 0)
 {
 ht->array[idx]->value = strdup(value);
 stp = 1;
 }
-ht->array[idx] = ht->array[idx]->next;
 }
 if (stp != 1)
 {
