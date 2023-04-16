@@ -7,9 +7,7 @@
 void hash_table_print(const hash_table_t *ht)
 {
 unsigned long int i, stop, size = ht->size;
-if (ht != NULL)
-{
-for (stop = 0; ((size > 0) && (stop != 1)); size--)
+for (stop = 0; ((size > 0) && (stop != 1)); size--) 
 {
 if (ht->array[size] != NULL)
 stop = 1;
@@ -40,5 +38,4 @@ printf("%c", ' ');
 }
 }
 printf("%c\n", '}');
-}
 }
