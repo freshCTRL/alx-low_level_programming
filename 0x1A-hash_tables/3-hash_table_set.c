@@ -14,7 +14,7 @@ if (ht == NULL)
 return (0);
 if (ht->array == NULL)
 return (0);
-if (strncmp(key, "") == 0)
+if (strcmp(key, "") == 0)
 return (0);
 idx = key_index((const unsigned char *)key, ht->size);
 if (idx < ht->size)
@@ -31,16 +31,17 @@ ht->array[idx]->next = NULL;
 else
 {
 ptr = ht->array[idx];
-while ((ptr != NULL) && (stp != 1))
+while (ptr != NULL)
 {
-if (strncmp(ptr->key, key) == 0)
+if (strcmp(ptr->key, key) == 0)
 {
 ht->array[idx]->value = strdup(value);
 stp = 1;
+break;
 }
 ptr = ptr->next;
 }
-if (stp == 0)
+if (stp != 1);
 {
 hash_node_t *new_entry = malloc(sizeof(ht->size));
 if (new_entry == NULL)
@@ -52,7 +53,7 @@ ht->array[idx] = new_entry;
 }
 }
 }
-if (strncmp(ht->array[idx]->key, key) == 0)
+if (strcmp(ht->array[idx]->key, key) == 0)
 return (1);
 return (0);
 }
