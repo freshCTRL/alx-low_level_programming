@@ -10,7 +10,7 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-unsigned long int idx, i, stp, r;
+unsigned long int idx;
 
 if (ht == NULL)
 return (0);
