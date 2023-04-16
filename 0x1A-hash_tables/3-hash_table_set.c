@@ -31,18 +31,23 @@ ht->array[idx]->next = NULL;
 else
 {
 ptr = ht->array[idx];
-while (ptr != NULL)
-{
-if (strcmp(ptr->key, key) == 0)
+if (strcmp(ht->array[idx]->key, key) == 0)
 {
 ht->array[idx]->value = strdup(value);
 stp = 1;
-break;
 }
-ptr = ptr->next;
-}
-if (stp != 1);
+while ((ht->array[idx]->next != NULL) && (stp != 1))
 {
+if (strcmp(ht->array[idx]->key, key) == 0)
+{
+ht->array[idx]->value = strdup(value);
+stp = 1;
+}
+ht->array[idx] = ht->array[idx]->next;
+}
+if (stp != 1)
+{
+ht->array[idx] = ptr;
 hash_node_t *new_entry = malloc(sizeof(ht->size));
 if (new_entry == NULL)
 return (0);
