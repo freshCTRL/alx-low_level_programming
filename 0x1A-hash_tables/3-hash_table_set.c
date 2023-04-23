@@ -1,9 +1,9 @@
 #include "hash_tables.h"
 /**
- * hash_table_set - Entry point.
- * @ht: argument to hash_table_set
- * @key:argument to hash_table_set
- * @value: argument to hash_table_set
+ * check_stp - Entry point.
+ * @ptr: argument to check_stp
+ * @stp: argument to check_stp
+ * @value: argument to check_stp
  * Return: 0 if failed else 1
  */
 void check_stp(hash_node_t **ptr, unsigned long int *stp, const char *value)
@@ -11,6 +11,14 @@ void check_stp(hash_node_t **ptr, unsigned long int *stp, const char *value)
 (*ptr)->value = strdup(value);
 *stp = 1;
 }
+/**
+ * insert_pair - Entry point.
+ * @ht: argument to insert_pair
+ * @idx: argument to insert_pair
+ * @key: argument to insert_pair
+ * @value: argument to insert_pair
+ * Return: 0 if failed else 1
+ */
 void insert(hash_table_t **ht, unsigned long int idx,
 	    const char *key, const char *value)
 {
@@ -18,6 +26,14 @@ void insert(hash_table_t **ht, unsigned long int idx,
 (*ht)->array[idx]->value = strdup(value);
 (*ht)->array[idx]->next = NULL;
 }
+/**
+ * insert_pair - Entry point.
+ * @ht: argument to insert_pair
+ * @idx: argument to insert_pair
+ * @key: argument to insert_pair
+ * @value: argument to insert_pair
+ * Return: 0 if failed else 1
+ */
 void insert_pair(hash_table_t **ht, unsigned long int idx,
 		 const char *key, const char *value)
 {
@@ -31,6 +47,13 @@ new_entry->next = (*ht)->array[idx];
 (*ht)->array[idx] = new_entry;
 }
 }
+/**
+ * hash_table_set - Entry point.
+ * @ht: argument to hash_table_set
+ * @key:argument to hash_table_set
+ * @value: argument to hash_table_set
+ * Return: 0 if failed else 1
+ */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 unsigned long int idx, stp = 0;
