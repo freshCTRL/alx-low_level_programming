@@ -23,6 +23,7 @@ void insert(hash_table_t **ht, unsigned long int idx,
 	    const char *key, const char *value)
 {
 (*ht)->array[idx]->key = strdup(key);
+free((*ht)->array[idx]->value);
 (*ht)->array[idx]->value = strdup(value);
 (*ht)->array[idx]->next = NULL;
 }
@@ -38,7 +39,7 @@ void insert_pair(hash_table_t **ht, unsigned long int idx,
 		 const char *key, const char *value)
 {
 hash_node_t *new_entry;
-new_entry = malloc(8);
+new_entry = malloc(sizeof(hash_node_t));
 if (new_entry != NULL)
 {
 new_entry->key = strdup(key);
@@ -65,7 +66,7 @@ if (idx < ht->size)
 {
 if (ht->array[idx] == NULL)
 {
-ht->array[idx] = malloc(sizeof(ht->size));
+ht->array[idx] = malloc(sizeof(hash_node_t));
 if (ht->array[idx] == NULL)
 return (0);
 insert(&ht, idx, key, value);
