@@ -58,6 +58,8 @@ return (0);
 if (strcmp(key, "") == 0)
 return (0);
 idx = key_index((const unsigned char *)key, ht->size);
+if (ht->size == 1)
+idx = 0;
 if (idx < ht->size)
 {
 if (ht->array[idx] == NULL)
