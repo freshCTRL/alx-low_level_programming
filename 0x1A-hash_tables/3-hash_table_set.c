@@ -35,7 +35,7 @@ return;
 new_entry->key = strdup(key);
 new_entry->value = strdup(value);
 new_entry->next = (*ht)->array[idx];
-(*ht)->array[idx] = new_entry;	
+(*ht)->array[idx] = new_entry;
 }
 /**
  * hash_table_set - Entry point.
