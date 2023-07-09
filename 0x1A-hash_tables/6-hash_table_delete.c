@@ -12,7 +12,7 @@ if (ht == NULL)
 return;
 for (i = 0; i < ht->size; i++)
 {
-while (ht->array[i]->next != NULL)
+while (ht->array[i] != NULL)
 {
 ptr = ht->array[i]->next;
 free(ht->array[i]->value);
@@ -21,6 +21,7 @@ free(ht->array[i]->next = NULL);
 free(ht->array[i]);
 ht->array[i] = ptr;
 }
+ptr = NULL;
 }
 free(ht->array);
 ht->array = NULL;
