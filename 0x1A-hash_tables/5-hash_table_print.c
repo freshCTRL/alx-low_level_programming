@@ -24,7 +24,7 @@ if (ht->array[i] != NULL)
 {
 printf("\'%s\':", ht->array[i]->key);
 printf(" \'%s\'", ht->array[i]->value);
-if (i != size)
+if ((i != size) || ((i == size) && (ht->array[i]->next != NULL)))
 {
 printf("%c", ',');
 printf("%c", ' ');
@@ -34,7 +34,7 @@ while (ht->array[i]->next != NULL)
 ht->array[i] = ht->array[i]->next;
 printf("\'%s\':", ht->array[i]->key);
 printf(" \'%s\'", ht->array[i]->value);
-if (i != size)
+if ((ht->array[i]->next != NULL) || (i != size))
 {
 printf("%c", ',');
 printf("%c", ' ');
