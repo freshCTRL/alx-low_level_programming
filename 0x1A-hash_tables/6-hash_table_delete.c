@@ -17,7 +17,7 @@ while (ht->array[i]->next != NULL)
 ptr = ht->array[i]->next;
 free(ht->array[i]->value);
 free(ht->array[i]->key);
-free(ht->array[i]->next);
+free(ht->array[i]->next = NULL);
 free(ht->array[i]);
 ht->array[i] = ptr;
 }
