@@ -8,30 +8,32 @@
 */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-unsigned long int idx, i;
+unsigned long int idx;
+hash_node_t *ptr;
 
 if (ht == NULL)
 return (NULL);
+
 if (ht->array == NULL)
 return (NULL);
 if (strcmp(key, "") == 0)
 return (NULL);
+
 idx = key_index((const unsigned char *)key, ht->size);
+
 if (ht->array[idx] == NULL)
 return (NULL);
+
+ptr = ht->array[idx];
+
 if (strcmp(ht->array[idx]->key, key) == 0)
-{
 return (ht->array[idx]->value);
-}
 else
 {
-for (i = 0; i < ht->size; i++)
+while (ptr->next != NULL)
 {
-if (ht->array[i] != NULL)
-{
-if (strcmp(ht->array[i]->key, key) == 0)
-return (ht->array[idx]->value);
-}
+if (strcmp(ptr->key, key) == 0)
+return (ptr->value);
 }
 }
 return (NULL);
