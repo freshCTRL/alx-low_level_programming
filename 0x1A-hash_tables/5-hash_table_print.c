@@ -11,7 +11,7 @@ if (ht == NULL)
 return;
 size = ht->size;
 stop = 0;
-while ((size > 0) && (stop != 1))
+while ((size > 0)&&(stop != 1))
 {
 size--;
 if (ht->array[size] != NULL)
