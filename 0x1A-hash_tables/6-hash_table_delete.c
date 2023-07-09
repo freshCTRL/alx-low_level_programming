@@ -14,11 +14,19 @@ for (i = 0; i < ht->size; i++)
 {
 while (ht->array[i] != NULL)
 {
-ptr = ht->array[i]->next;
+while (ht->array[i]->next != NULL) {
+ptr = ht->array[i];
+free(ptr->value);
+free(ptr->key);
+free(ptr->next);
+ptr = NULL;
+ht->array[i] = ht->array[i]->next;
+}
 free(ht->array[i]->value);
 free(ht->array[i]->key);
 free(ht->array[i]->next);
-ht->array[i] = ptr;
+free(ht->array[i]);
+ht->array[i] = NULL;
 }
 }
 free(ht->array);
