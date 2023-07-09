@@ -14,7 +14,8 @@ for (i = 0; i < ht->size; i++)
 {
 while (ht->array[i] != NULL)
 {
-while (ht->array[i]->next != NULL) {
+while (ht->array[i]->next != NULL)
+{
 ptr = ht->array[i];
 free(ptr->value);
 free(ptr->key);
