@@ -69,7 +69,7 @@ else
 if (ht->array[idx]->next != NULL)
 {
 ptr = ht->array[idx];
-while ((ptr != NULL) && (stp != 1))
+while ((ptr->next != NULL) && (stp != 1))
 {
 ptr = ptr->next;
 if (strcmp(ptr->key, key) == 0)
@@ -77,7 +77,7 @@ if (strcmp(ptr->key, key) == 0)
 ptr->value = strdup(value);
 stp = 1;
 }
-if ((stp != 1) && (ptr == NULL))
+if ((stp != 1) && (ptr->next == NULL))
 insert_pair(&ht, idx, key, value);
 }
 }
