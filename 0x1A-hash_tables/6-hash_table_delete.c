@@ -29,7 +29,7 @@ ptr1 = ptr;
 free(ht->array[i]->value);
 free(ht->array[i]->key);
 free(ht->array[i]->next);
-ht->array[i] == NULL;
+ht->array[i] = NULL;
 }
 }
 }
