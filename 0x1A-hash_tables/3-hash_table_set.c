@@ -11,12 +11,11 @@ void insert(hash_table_t **ht, unsigned long int idx,
 const char *key, const char *value)
 {
 (*ht)->array[idx] = malloc(sizeof((*ht)->size));
-if ((*ht)->array[idx] != NULL)
-{
+if ((*ht)->array[idx] == NULL)
+return;
 (*ht)->array[idx]->key = strdup(key);
 (*ht)->array[idx]->value = strdup(value);
 (*ht)->array[idx]->next = NULL;
-}
 }
 /**
  * insert_pair - Entry point.
@@ -31,13 +30,12 @@ const char *key, const char *value)
 {
 hash_node_t *new_entry;
 new_entry = malloc(sizeof((*ht)->size));
-if (new_entry != NULL)
-{
+if (new_entry == NULL)
+return;
 new_entry->key = strdup(key);
 new_entry->value = strdup(value);
 new_entry->next = (*ht)->array[idx];
-(*ht)->array[idx] = new_entry;
-}
+(*ht)->array[idx] = new_entry;	
 }
 /**
  * hash_table_set - Entry point.
