@@ -17,6 +17,8 @@ if ((*ht)->array[idx] != NULL)
 (*ht)->array[idx]->value = strdup(value);
 (*ht)->array[idx]->next = NULL;
 }
+free((*ht)->array[idx]);
+(*ht)->array[idx] = NULL;
 }
 /**
  * insert_pair - Entry point.
