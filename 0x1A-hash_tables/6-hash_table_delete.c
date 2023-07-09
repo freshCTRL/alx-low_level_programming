@@ -12,7 +12,7 @@ if (ht == NULL)
 return;
 for (i = 0; i < ht->size; i++)
 {
-while (ht->array[i] != NULL)
+if (ht->array[i] != NULL)
 {
 while (ht->array[i]->next != NULL) {
 ptr = ht->array[i];
