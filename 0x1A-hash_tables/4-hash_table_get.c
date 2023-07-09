@@ -19,15 +19,16 @@ return (NULL);
 idx = key_index((const unsigned char *)key, ht->size);
 if (ht->array[idx] == NULL)
 return (NULL);
-ptr = ht->array[idx];
 if (strcmp(ht->array[idx]->key, key) == 0)
 return (ht->array[idx]->value);
 else
 {
-while (ptr->next != NULL)
+ptr = ht->array[idx]->next;
+while (ptr != NULL)
 {
 if (strcmp(ptr->key, key) == 0)
 return (ptr->value);
+ptr = ptr->next;
 }
 }
 return (NULL);
