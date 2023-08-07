@@ -49,11 +49,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 unsigned long int idx;
 int stp = 0;
 hash_node_t *ptr = NULL;
-if (ht == NULL)
-return (0);
-if (ht->array == NULL)
-return (0);
-if (strcmp(key, "") == 0)
+if (ht == NULL || ht->array == NULL || strcmp(key, "") == 0)
 return (0);
 idx = key_index((const unsigned char *)key, ht->size);
 if (ht->array[idx] == NULL)
