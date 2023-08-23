@@ -1,0 +1,10 @@
+SRC = main.c school.c
+CC = gcc
+
+all: all_functions
+
+all_functions: $(SRC)
+	$(CC) $(SRC) -o school
+
+clean:
+	rm school
